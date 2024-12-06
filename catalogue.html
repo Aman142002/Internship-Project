@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="styles.css">
+        <!-- Font Awesome Link -->
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#"><img src="images/image.png" alt="Logo"></a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="catalogue.html">SHOP</a></li>
+                    <li><a href="#">OCCASIONS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </div>
+
+        </div>
+        <section class="product-hero">
+            <section class="product-hero">
+                <div class="hero-content">
+                    <h1>SHOP BY CATEGORY</h1>
+                </div>
+            </section>
+        </section>
+        <div class="product-toolbar">
+            <div class="toolbar-left">
+                <button class="filter-btn">
+                    <i class="fas fa-sliders-h"></i> Filter
+                </button>
+                <button class="view-toggle grid-view active">
+                    <i class="fas fa-th"></i>
+                </button>
+                <button class="view-toggle list-view">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <span class="results-info">Showing 1–16 of 32 results</span>
+            </div>
+            <div class="toolbar-right">
+                <label for="items-per-page">Show</label>
+                <select id="items-per-page">
+                    <option value="16">16</option>
+                    <option value="32">32</option>
+                    <option value="64">64</option>
+                </select>
+                <label for="sort-by">Sort by</label>
+                <select id="sort-by">
+                    <option value="default">Default</option>
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Product Grid Section -->
+        <header>
+        <h1>Product Catalogue</h1>
+    </header>
+    <section id="product-list">
+        <!-- Products will be dynamically displayed here -->
+    </section>
+        <div class="pagination">
+            <button id="prevPage" class="page-btn">Previous</button>
+            <span id="pageNumber" class="page-number">1</span>
+            <span id="pageNumber" class="page-number">2</span>
+            <span id="pageNumber" class="page-number">3</span>
+            <span id="pageNumber" class="page-number">...</span>
+            <button id="nextPage" class="page-btn">Next</button>
+        </div>
+        <section class="contact">
+            <div class="container">
+                <!-- Left Side: Logo and Social Media Icons -->
+                <div class="contact-left">
+                    <div class="logo">
+                        <img src="images/image.png" alt="Logo">
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Contact Information -->
+                <div class="contact-right">
+                    <h3>CONTACT INFORMATION</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, inventore! Quisquam, repudiandae expedita labore ullam debitis quibusdam eligendi tempora ipsam quas quam distinctio nulla. Odio repudiandae reprehenderit at perferendis ab!
+                    </p>
+                </div>
+            </div>
+        </section>  
+    </header>
+    <script src="app.js"></script>
+</body>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 All Rights Reserved | Company Name</p>
+    </div>
+</footer>
+</html>

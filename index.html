@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- Font Awesome Link -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <style>
+            .products {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.category-list {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.category {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category:hover {
+    background-color: #0056b3;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-item {
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#"><img src="images/image.png" alt="Logo"></a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="catalogue.html">SHOP</a></li>
+                    <li><a href="#">OCCASIONS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Add other sections here -->
+
+    <script src="app.js"></script>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Revolutionizing Gift Giving</h1>
+            <p>
+                Gift-giving has always been a cherished tradition, a way to express love, appreciation, and joy. 
+                However, in a world where mass production often overshadows personal touch, our gift shop is redefining how we celebrate these moments by revolutionizing the very essence of giving.
+            </p>
+            <a href="about.html" class="btn">Learn More</a>
+        </div>
+    </section>
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Products</h2>
+    
+            <!-- Categories with images acting as buttons -->
+            <div class="product-list">
+                <!-- Category 1 - Stationary Items -->
+                <div class="product-item category" data-category="6750576b40729a8bd97082e5">
+                    <a href="javascript:void(0);">
+                        <img src="images/stationary.jpg" alt="Stationary Items">
+                        <h3>Stationary Items</h3>
+                    </a>
+                </div>
+                <!-- Category 2 - School Gift Items -->
+                <div class="product-item category" data-category="6750562cd85879d30e45b0fc">
+                    <a href="javascript:void(0);">
+                        <img src="images/couple gift items.jpg" alt="School Gift Items">
+                        <h3>School Gift Items</h3>
+                    </a>
+                </div>
+                <!-- Category 3 - Greeting Cards -->
+                <div class="product-item category" data-category="6750578140729a8bd97082e7">
+                    <a href="javascript:void(0);">
+                        <img src="images/greetingcards.jpg" alt="Greeting Cards">
+                        <h3>Greeting Cards</h3>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Dynamic product content will be inserted here -->
+            </div>
+        </div>
+    </section>
+    
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="vision-section">
+        <div class="vision-content">
+            <h2>Vision</h2>
+            <p>
+                To inspire and empower our customers to express their love, appreciation, 
+                and care through thoughtfully curated gifts, delivered with a personal touch 
+                and exceptional service.
+            </p>
+            <a href="about.html" class="btn">Learn More</a>
+        </div>
+    </section>
+    <section class="creative-design">
+        <div class="container">
+            <div class="content">
+                <h2>Creative Designs for Every Occasion</h2>
+                <p>
+                    Creative design is an essential part of any successful business or organization. By following these tips, 
+                    you can create designs that are both beautiful and effective.
+                </p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="image-box">
+                <div class="image-item">
+                    <img src="images/creativedesign1.png" alt="Image 1">
+                </div>
+                <div class="image-item">
+                    <img src="images/creativedesign2.png" alt="Image 2">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="our-creations">
+        <div class="container">
+            <div class="creations-content">
+                <h2>OUR CREATIONS</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.
+                </p>
+            </div>
+            <div class="creations-images">
+                <div class="image-item">
+                    <img src="images/creation1.png" alt="Personalized Gifts">
+                    <h3><b>Personalized Gifts</b></h3>
+                    <p>Personalized Gifts</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/creation2.png" alt="Customer Stories">
+                    <h3><b>Customer Stories</b></h3>
+                    <p>John's Wedding Gift Set</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/creation3.png" alt="Best Selling Items">
+                    <h3><b>Best Selling Items</b></h3>
+                    <p>Premium Leather Journal</p>
+                </div>
+            </div>
+            <div class="shop-now">
+                <a href="catalogue.html" class="btn">SHOP NOW</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="contact">
+        <div class="container">
+            <!-- Left Side: Logo and Social Media Icons -->
+            <div class="contact-left">
+                <div class="logo">
+                    <img src="images/image.png" alt="Logo">
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+            <!-- Right Side: Contact Information -->
+            <div class="contact-right">
+                <h3>CONTACT INFORMATION</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, inventore! Quisquam, repudiandae expedita labore ullam debitis quibusdam eligendi tempora ipsam quas quam distinctio nulla. Odio repudiandae reprehenderit at perferendis ab!
+                </p>
+            </div>
+        </div>
+    </section>  
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 All Rights Reserved | Company Name</p>
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const productGrid = document.getElementById('productGrid');
+        const categories = document.querySelectorAll('.category');
+
+        categories.forEach(category => {
+            category.addEventListener('click', () => {
+                const categoryId = category.dataset.category;
+
+                // Fetch products by category
+                fetch(`http://localhost:3000/api/v1/products?categories=${categoryId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch products');
+                        }
+                        return response.json();
+                    })
+                    .then(products => {
+                        productGrid.innerHTML = '';
+
+                        if (products.length === 0) {
+                            productGrid.innerHTML = '<p>No products found in this category.</p>';
+                            return;
+                        }
+
+                        products.forEach(product => {
+                            const productCard = document.createElement('div');
+                            productCard.className = 'product-card';
+                            productCard.innerHTML = `
+                                <img src="${product.image}" alt="${product.name}">
+                                <div class="product-info">
+                                    <h3>${product.name}</h3>
+                                    <p>${product.description}</p>
+                                    <p>Price: $${product.price}</p>
+                                </div>
+                            `;
+                            productGrid.appendChild(productCard);
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        productGrid.innerHTML = '<p class="error-message">Error loading products. Please try again later.</p>';
+                    });
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>
