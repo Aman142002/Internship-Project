@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Description</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS File -->
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #bfbfbf;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #0a0a0a;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header .icons a {
+    color: #080808;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+/* Product Details */
+#product-details {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#product-details img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+#product-details h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#product-details p {
+    margin: 10px 0;
+}
+
+#product-details span {
+    font-size: 1.5rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+#product-details button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#product-details button:hover {
+    background: #0056b3;
+}
+
+/* Reviews Section */
+.reviews-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section h2 {
+    margin-bottom: 10px;
+}
+
+.review {
+    margin: 10px 0;
+}
+
+.review-rating {
+    color: #ffc107;
+}
+
+/* Related Products Section */
+.related-products {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.related-products .product-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.related-products .product-item {
+    flex: 1;
+    text-align: center;
+}
+
+.related-products .product-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="images/image.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="catalogue.html">SHOP</a></li>
+                    <li><a href="#">OCCASIONS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Details Section -->
+    <section id="product-details">
+        <!-- Product details will be dynamically displayed here -->
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p><strong>John Doe</strong> - <span class="review-rating">⭐⭐⭐⭐☆</span></p>
+                <p>This product is fantastic! It fits perfectly and the quality is great. Highly recommend!</p>
+            </div>
+            <div class="review">
+                <p><strong>Jane Smith</strong> - <span class="review-rating">⭐⭐⭐⭐⭐</span></p>
+                <p>Great value for the price. I love the color and material. Would buy again.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="related-products">
+        <div class="container">
+            <h2>Related Products</h2>
+            <div class="product-grid">
+                <!-- Related product items will be inserted dynamically -->
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <!-- Left Side: Logo and Social Media Icons -->
+            <div class="contact-left">
+                <div class="logo">
+                    <img src="images/image.png" alt="Logo">
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+            <!-- Right Side: Contact Information -->
+            <div class="contact-right">
+                <h3>CONTACT INFORMATION</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, inventore! Quisquam, repudiandae expedita labore ullam debitis quibusdam eligendi tempora ipsam quas quam distinctio nulla. Odio repudiandae reprehenderit at perferendis ab!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MyShop. All rights reserved.</p>
+    </footer>
+
+    <script src="productdescription.js"></script> <!-- External JS File -->
+</body>
+</html>
