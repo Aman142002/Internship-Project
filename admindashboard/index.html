@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="adminstyles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <section id="overview">
+            <h2>Dashboard Overview</h2>
+            <div id="stats">
+                <div class="stat">Total Products: <span id="total-products">0</span></div>
+                <div class="stat">Total Users: <span id="total-users">0</span></div>
+                <div class="stat">Total Orders: <span id="total-orders">0</span></div>
+                <div class="stat">Total Sales: $<span id="total-sales">0</span></div>
+            </div>
+        </section>
+        
+        <section id="product-management">
+            <h2>Product Management</h2>
+            <button onclick="openAddProductModal()">Add Product</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list"></tbody>
+            </table>
+        </section>
+        
+        <section id="user-management">
+            <h2>User Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list"></tbody>
+            </table>
+        </section>
+
+        <section id="order-management">
+            <h2>Order Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>User</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="order-list"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add Product</h2>
+            <form id="add-product-form">
+                <label>Name: <input type="text" id="product-name" required></label>
+                <label>Price: <input type="number" id="product-price" required></label>
+                <label>Stock: <input type="number" id="product-stock" required></label>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
