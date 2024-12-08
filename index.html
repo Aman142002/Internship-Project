@@ -367,7 +367,7 @@
                 const categoryId = category.dataset.category;
 
                 // Fetch products by category
-                fetch(`http://localhost:3000/api/v1/products?categories=${categoryId}`)
+                fetch(`https://internship-project-8ub3.onrender.com/api/v1/products?categories=${categoryId}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Failed to fetch products');
