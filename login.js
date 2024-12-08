@@ -23,24 +23,4 @@ async function loginUser() {
     }
 }
 
-// Forgot Password
-async function forgotPassword() {
-    const email = document.getElementById("forgot-email").value;
 
-    try {
-        const response = await fetch(`${apiUrl}/email-check?email=${email}&type=forgot-password`);
-
-        const data = await response.json();
-        if (response.status === 404) {
-            document.getElementById("forgot-message").textContent = data.message || "Email not found!";
-        } else if (response.status === 200) {
-            const userId = data._id; // Use the user ID for password reset
-            document.getElementById("forgot-message").textContent = "Please proceed with password reset.";
-            // Call the password update function with the user ID and new password
-            updatePassword(userId);
-        }
-
-    } catch (error) {
-        document.getElementById("forgot-message").textContent = "Error: " + error.message;
-    }
-}
