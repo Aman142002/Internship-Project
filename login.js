@@ -1,44 +1,46 @@
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevent form submission
+const apiUrl = "https://internship-project-8ub3.onrender.com/api/v1/users";
+async function loginUser() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    if (!email || !password) {
-        alert('Please fill out both email and password fields');
-        return;
-    }
+    const loginData = { email, password };
 
     try {
-        // Send the login request to the backend API
-        const response = await fetch(`https://internship-project-8ub3.onrender.com/users//email-check?email=${email}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
+        const response = await fetch(`${apiUrl}/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(loginData),
         });
 
         const data = await response.json();
-
-        if (response.ok) {
-            // Login successful
-            alert(data.message || 'Login successful!');
-            localStorage.setItem('userToken', JSON.stringify(data.user)); // Save user details locally
-
-            // Redirect based on user role
-            if (data.user.isAdmin) {
-                window.location.href = 'dashboard.html'; // Redirect to admin dashboard
-            } else {
-                window.location.href = 'index.html'; // Redirect to user dashboard
-            }
+        if (response.status === 200) {
+            document.getElementById("login-message").textContent = data.message;
         } else {
-            // Login failed (wrong credentials or other server error)
-            alert(data.message || 'Login failed!');
+            document.getElementById("login-message").textContent = data.message || "Error logging in!";
         }
     } catch (error) {
-        // Handle network or unexpected errors
-        console.error('Error during login:', error);
-        alert('Something went wrong. Please try again.');
+        document.getElementById("login-message").textContent = "Error: " + error.message;
     }
-});
+}
+
+// Forgot Password
+async function forgotPassword() {
+    const email = document.getElementById("forgot-email").value;
+
+    try {
+        const response = await fetch(`${apiUrl}/email-check?email=${email}&type=forgot-password`);
+
+        const data = await response.json();
+        if (response.status === 404) {
+            document.getElementById("forgot-message").textContent = data.message || "Email not found!";
+        } else if (response.status === 200) {
+            const userId = data._id; // Use the user ID for password reset
+            document.getElementById("forgot-message").textContent = "Please proceed with password reset.";
+            // Call the password update function with the user ID and new password
+            updatePassword(userId);
+        }
+
+    } catch (error) {
+        document.getElementById("forgot-message").textContent = "Error: " + error.message;
+    }
+}
