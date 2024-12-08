@@ -1,4 +1,4 @@
-const apiBaseUrl = "http://127.0.0.1:3000/api/v1";
+const apiBaseUrl = "https://internship-project-8ub3.onrender.com/api/v1";
 
 // Fetch and display product details
 async function fetchProductDetails() {
