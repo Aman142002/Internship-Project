@@ -27,7 +27,7 @@ header .container {
 
 /* Logo */
 .logo img {
-    height: 50px;
+    height: 100px;
 }
 
 /* Navigation Links */
@@ -195,6 +195,8 @@ nav ul li a:hover {
     }
 }
 
+
+
 /* Product Section */
 .products {
     padding: 50px 0;
@@ -217,34 +219,90 @@ nav ul li a:hover {
     padding: 0 40px; /* Increase spacing from the container edges */
 }
 
-.product-item {
-    flex: 1; /* Equal width for each item */
-    max-width: 300px; /* Optional: Limit max width */
+/* Product Grid Card */
+.product-grid {
+    flex: 2;
+    max-width: 280px; /* Adjust max width for better alignment in a grid */
     text-align: center;
     background: #fff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto; /* Centering and spacing */
 }
 
-.product-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+/* Hover Effect for Product Card */
+.product-grid:hover {
+    transform: translateY(-8px); /* Slight lift for interactivity */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
-.product-item img {
-    width: 100%; /* Full width of container */
+/* Product Image */
+.product-grid img {
+    width: 80%; /* Adjust for responsive sizing */
     height: auto;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 8px; /* Slightly rounded corners */
     margin-bottom: 15px;
 }
 
-.product-item h3 {
-    font-size: 1.2rem;
+/* Product Title */
+.product-grid h3 {
+    font-size: 1.3rem;
     color: #333;
     margin-top: 10px;
+    font-weight: 600; /* Bolder for emphasis */
 }
+
+/* Product Description */
+.product-grid p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0 15px;
+}
+
+/* Add to Cart Button */
+.product-grid .add-to-cart {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-grid .add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+    .product-grid {
+        max-width: 90%; /* Full width for smaller screens */
+        padding: 15px;
+        margin: 15px auto; /* Centered with spacing */
+    }
+
+    .product-grid img {
+        width: 70%; /* Adjust image size for smaller viewports */
+    }
+
+    .product-grid h3 {
+        font-size: 1.1rem;
+    }
+
+    .product-grid p {
+        font-size: 0.9rem;
+    }
+
+    .product-grid .add-to-cart {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -722,37 +780,40 @@ footer .footer-content p a:hover {
     background: #fff;
 }
 
-.product-grid {
+#product-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+    grid-template-columns: repeat(2, 1fr); /* Default to 3 columns */
     grid-gap: 20px;
     padding: 20px;
 }
 
-.product-item {
-    background-color: #fff;
+#product-list {
+    background-color: #faf9f9;
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-item img {
-    max-width: 100%;
+#product-list .product-image {
+    max-width: 30%;
     height: auto;
+    margin-top: 70px;
 }
 
-.product-item h3 {
+.product-image h3 {
+    display: flex;
     font-size: 18px;
     margin: 10px 0;
 }
 
-.product-item p {
+.product-image p {
     font-size: 16px;
     color: #555;
+    display: flex;
 }
 
-.product-item .add-to-cart {
+.product-image .add-to-cart {
     background-color: #000;
     color: #fff;
     padding: 10px 15px;
@@ -761,7 +822,7 @@ footer .footer-content p a:hover {
     margin-top: 10px;
 }
 
-.product-item .add-to-cart:hover {
+.product-list .add-to-cart:hover {
     background-color: #333;
 }
 
