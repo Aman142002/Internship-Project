@@ -1,37 +1,40 @@
-// Signup Form Handler
-document.getElementById('signupForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevent form submission
+const apiUrl = "https://internship-project-8ub3.onrender.com/api/v1/users";
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+// Register User
+async function registerUser() {
+    const name = document.getElementById("register-name").value;
+    const email = document.getElementById("register-email").value;
+    const password = document.getElementById("register-password").value;
+
+    const userData = {
+        name,
+        email,
+        password
+    };
 
     try {
-        const response = await fetch('https://internship-project-8ub3.onrender.com/api/v1/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, password }),
+        // Check if email already exists before registering
+        const emailCheckResponse = await fetch(`${apiUrl}/email-check?email=${email}&type=register`);
+        const emailCheckData = await emailCheckResponse.json();
+        
+        if (emailCheckResponse.status === 400) {
+            document.getElementById("register-message").textContent = "This email is already registered!";
+            return;
+        }
+
+        const response = await fetch(`${apiUrl}/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
         });
 
         const data = await response.json();
-
-        if (response.ok) {
-            // Signup successful
-            alert(data.message || 'Signup successful!');
-            window.location.href = 'login.html'; // Redirect to login page after successful signup
+        if (response.status === 201) {
+            document.getElementById("register-message").textContent = "Registration successful!";
         } else {
-            // Show error from server
-            alert(data.message || 'Signup failed!');
+            document.getElementById("register-message").textContent = data.message || "Error registering!";
         }
     } catch (error) {
-        console.error('Error during signup:', error);
-        alert('Something went wrong. Please try again.');
+        document.getElementById("register-message").textContent = "Error: " + error.message;
     }
-});
-
-// Google Sign Up Handler
-document.querySelector('.google-signup').addEventListener('click', function () {
-    window.location.href = 'https://your-auth-provider.com/google'; // Replace with your OAuth 2.0 provider URL
-});
+}
