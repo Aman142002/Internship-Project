@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">   
         <!-- Font Awesome Link -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <style>
@@ -22,7 +22,7 @@
 
 .category {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #e6eaed;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -30,7 +30,7 @@
 }
 
 .category:hover {
-    background-color: #0056b3;
+    background-color: #d9dadb;
 }
 
 .product-grid {
@@ -72,6 +72,98 @@
     color: #555;
 }
 
+            /* Hamburger Menu Dropdown */
+            .hamburger-menu {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown {
+                display: none;
+                position: absolute;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                z-index: 10;
+                overflow: hidden;
+            }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 20px;
+                color: black;
+                text-decoration: none;
+                transition: background-color 0.2s;
+            }
+
+            .dropdown a:hover {
+                background-color: #f1f1f1;
+            }
+
+            .hamburger-menu:hover .dropdown {
+                display: block;
+            }
+
+            /* Login Modal Styles */
+            .login-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+                z-index: 20;
+            }
+
+            .login-modal.active {
+                display: flex;
+            }
+
+            .login-modal-content {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+                text-align: center;
+            }
+
+            .login-modal-content h3 {
+                margin-bottom: 20px;
+            }
+
+            .login-modal-content input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .login-modal-content button {
+                background-color: #007bff;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .login-modal-content button:hover {
+                background-color: #0056b3;
+            }
+
+            .login-modal-close {
+                margin-top: 10px;
+                cursor: pointer;
+                color: #555;
+                text-decoration: underline;
+            }
         </style>
     </head>
     
@@ -80,7 +172,7 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo">
-                <a href="#"><img src="images/image.png" alt="Logo"></a>
+                <a href="index.html"><img src="images/image.png" alt="Logo"></a>
             </div>
             
             <!-- Navigation Links -->
@@ -88,25 +180,37 @@
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="catalogue.html">SHOP</a></li>
-                    <li><a href="#">OCCASIONS</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
                 </ul>
             </nav>
             
+            <!-- Icons -->
             <div class="icons">
                 <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-heart"></i></a>
                 <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#"><i class="fas fa-bars"></i></a>
+                <div class="hamburger-menu">
+                    <a href="#"><i class="fas fa-bars"></i></a>
+                    <div class="dropdown">
+                        <a href="login.html" id="loginBtn">Login</a>
+                        <a href="admindashboard/index.html">Admin Dashboard</a>
+                    </div>
+                </div>
             </div>
-
         </div>
     </header>
 
-
-    <!-- Add other sections here -->
-
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-modal-content">
+            <h3>Login</h3>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="loginSubmit">Login</button>
+            <p class="login-modal-close" id="closeLoginModal">Close</p>
+        </div>
+    </div>
     <script src="app.js"></script>
     <section class="hero">
         <div class="hero-content">
@@ -299,8 +403,34 @@
             });
         });
     });
-</script>
 
+        // Modal Functionality
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
 
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.add('active');
+        });
+
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.classList.remove('active');
+        });
+
+        // Login Handler (example)
+        document.getElementById('loginSubmit').addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert('Login successful!');
+                loginModal.classList.remove('active');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        
+    </script>
 </body>
 </html>
