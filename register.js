@@ -7,7 +7,7 @@ document.getElementById('signupForm').addEventListener('submit', async function 
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('http://localhost:3000/api/v1/users/register', {
+        const response = await fetch('https://internship-project-8ub3.onrender.com/api/v1/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
