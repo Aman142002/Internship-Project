@@ -11,7 +11,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     try {
         // Send the login request to the backend API
-        const response = await fetch('https://internship-project-8ub3.onrender.com/api/v1/users', {
+        const response = await fetch('https://internship-project-8ub3.onrender.com/users//email-check?email=emailaddress', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
