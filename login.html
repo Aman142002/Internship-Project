@@ -9,193 +9,145 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #f8f8f8;
-    color: #333;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f8f8f8;
+            color: #333;
+        }
 
-.login-container {
-    display: flex;
-    width: 80%;
-    max-width: 1200px;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .login-container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.login-box, .promo-box {
-    flex: 1;
-    padding: 40px;
-}
+        .login-box, .promo-box {
+            flex: 1;
+            padding: 40px;
+        }
 
-.login-box {
-    background: #fff;
-}
+        .login-box {
+            background: #fff;
+        }
 
-.promo-box {
-    background: #f2e9e4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+        .promo-box {
+            background: #f2e9e4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-/* Logo */
-.logo {
-    width: 150px;
-    display: block;
-    margin: 0 auto 20px;
-}
+        /* Logo */
+        .logo {
+            width: 150px;
+            display: block;
+            margin: 0 auto 20px;
+        }
 
-/* Headings and Text */
-h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #222;
-}
+        /* Headings and Text */
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #222;
+        }
 
-p {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    color: #666;
-}
+        p {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
 
-.signup a {
-    text-decoration: none;
-    color: #b98156;
-    font-weight: 600;
-}
+        #login-message {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
 
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+        .signup a {
+            text-decoration: none;
+            color: #b98156;
+            font-weight: 600;
+        }
 
-.input-group {
-    display: flex;
-    align-items: center;
-    background: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px 15px;
-}
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-.input-group i {
-    margin-right: 10px;
-    color: #aaa;
-}
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
 
-.input-group input {
-    border: none;
-    background: none;
-    outline: none;
-    width: 100%;
-    font-size: 1rem;
-    color: #333;
-}
+        .input-group i {
+            margin-right: 10px;
+            color: #aaa;
+        }
 
-.input-group input::placeholder {
-    color: #aaa;
-}
+        .input-group input {
+            border: none;
+            background: none;
+            outline: none;
+            width: 100%;
+            font-size: 1rem;
+            color: #333;
+        }
 
-/* Buttons */
-.btn {
-    background: #b98156;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-align: center;
-    transition: all 0.3s;
-}
+        .input-group input::placeholder {
+            color: #aaa;
+        }
 
-.btn:hover {
-    background: #9d7048;
-}
+        /* Buttons */
+        .btn {
+            background: #b98156;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
 
-.alt-login {
-    text-align: center;
-    margin-top: 20px;
-}
+        .btn:hover {
+            background: #9d7048;
+        }
 
-.alt-login p {
-    margin-bottom: 10px;
-}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+            }
 
-.btn-google, .btn-facebook {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.btn-google:hover {
-    background: #f4f4f4;
-}
-
-.btn-facebook:hover {
-    background: #f4f4f4;
-}
-
-/* Right Promo Section */
-.promo-content {
-    text-align: center;
-}
-
-.promo-content p {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-.promo-image {
-    width: 80%;
-    max-width: 300px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .login-container {
-        flex-direction: column;
-    }
-
-    .login-box, .promo-box {
-        padding: 20px;
-    }
-
-    .promo-box {
-        display: none; /* Hide promo section on smaller screens */
-    }
-}
-
-
+            .promo-box {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -204,19 +156,19 @@ form {
         <div class="login-box">
             <img src="images/image.png" alt="MERA BESTIE Logo" class="logo">
             <h1>LOGIN</h1>
-            <p>How to I get started lorem ipsum dolor at?</p>
+            <p>How to get started lorem ipsum dolor at?</p>
             <form id="loginForm">
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" id="login-email" placeholder="Email" required>
                 </div>
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="btn">Login Now</button>
             </form>
-          
+            <p id="login-message"></p>
             <p class="signup">Need an account? <a href="register.html">Create one</a></p>
         </div>
 
