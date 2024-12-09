@@ -129,18 +129,21 @@ header .icons a {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Prevent content overflow */
+    overflow: hidden; /* Prevent any content overflow */
 }
 
 .related-products .product-grid {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* Allow wrapping of items */
+    flex-direction: row; /* Ensure landscape layout */
+    gap: 20px; /* Space between products */
+    overflow-x: auto; /* Allow horizontal scrolling for smaller screens */
+    padding-bottom: 10px; /* Space for better scrolling */
 }
 
 .related-products .product-item {
-    flex: 1;
+    flex: 0 0 auto; /* Maintain individual product size */
     text-align: center;
+    width: 300px; /* Set a fixed width for products */
 }
 
 .related-products .product-item img {
@@ -148,13 +151,16 @@ header .icons a {
     border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-    .related-products .product-grid {
-        flex-direction: column; /* Stack products vertically */
-    }
-    .related-products .product-item {
-        width: 100%; /* Full width on smaller screens */
-    }
+/* Optional: Styling for scrollbars in modern browsers */
+.related-products .product-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.related-products .product-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+.related-products .product-grid::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 
