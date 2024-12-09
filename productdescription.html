@@ -129,11 +129,13 @@ header .icons a {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .related-products .product-grid {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping of items */
 }
 
 .related-products .product-item {
@@ -145,6 +147,16 @@ header .icons a {
     width: 100%;
     border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+    .related-products .product-grid {
+        flex-direction: column; /* Stack products vertically */
+    }
+    .related-products .product-item {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
 
 /* Footer */
 footer {
